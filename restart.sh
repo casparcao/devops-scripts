@@ -25,6 +25,7 @@ if [ -e $TMP_DIR$NEW_APP_FILE_NAME ]; then
 fi
 
 echo '重启服务开始'
+mv nohup.out nohup.out.`date +%Y-%m-%d-%H-%M-%S-%N`
 nohup /home/java/jdk8/bin/java -jar $WORK_DIR$NEW_APP_FILE_NAME > nohup.out 2>&1 &
 echo $! > $PID_FILE
 echo "重启服务完成，服务PID=$!"
